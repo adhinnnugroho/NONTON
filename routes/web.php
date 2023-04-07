@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Layanan\Product\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->to('/login');
 });
+
 Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::name('layanan')->prefix('layanan')->group(function () {
+    Route::get('produk', [ProductController::class, 'index'])->name('.produk');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

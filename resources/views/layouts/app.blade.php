@@ -13,30 +13,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-    </style>
-    <style type="text/tailwindcss">
-        @layer components {
-            .side-link {
-                @apply flex items-center font-normal text-black text-sm w-full mb-5 gap-3 transition-all;
-            }
-
-            .side-link svg {
-                @apply text-[#B7B7B7];
-            }
-
-            .side-link.active {
-                @apply font-semibold border-r-[3px] border-alerange;
-            }
-
-            .side-link.active svg {
-                @apply text-alerange;
-            }
-        }
-    </style>
+    @livewireStyles
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="font-poppins">
@@ -53,23 +33,28 @@
     </div>
 
 
+    @livewireScripts
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
+        data-turbolinks-eval="false"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{{ asset('/assets/script/script.js') }}"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.__scroll-selector').removeClass('hidden').flickity({
-                "cellAlign": "left",
-                "contain": true,
-                "groupCells": 1,
-                "wrapAround": false,
-                "pageDots": false,
-                "prevNextButtons": false,
-                "draggable": ">1"
-            });
-        })
-    </script>
+    <script src="{{ asset('/assets/script/script.js') }}"></script>
+    @if (Route::is('dashboard'))
+        <script>
+            $(document).on('turbolinks:load', function() {
+                $('.__scroll-selector').removeClass('hidden').flickity({
+                    "cellAlign": "left",
+                    "contain": true,
+                    "groupCells": 1,
+                    "wrapAround": false,
+                    "pageDots": false,
+                    "prevNextButtons": false,
+                    "draggable": ">1"
+                });
+            })
+        </script>
+    @endif
 </body>
 
 </html>
