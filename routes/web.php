@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Film\FilmController;
 use App\Http\Controllers\Layanan\Product\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,12 @@ Route::get('dashboard', function () {
 Route::name('layanan')->prefix('layanan')->group(function () {
     Route::get('produk', [ProductController::class, 'index'])->name('.produk');
 });
+
+Route::name('nonton')->prefix('nonton')->group(function () {
+    Route::get('film', [FilmController::class, 'index'])->name('.film');
+});
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

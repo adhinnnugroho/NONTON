@@ -34,10 +34,10 @@
 
 
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
-        data-turbolinks-eval="false"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
+        data-turbolinks-eval="false"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ asset('/assets/script/script.js') }}"></script>
     @if (Route::is('dashboard'))
@@ -53,6 +53,47 @@
                     "draggable": ">1"
                 });
             })
+        </script>
+    @endif
+
+    @if (Route::is('nonton.film'))
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
+
+        <script>
+            // videojs data-setup
+            videojs('stream-video', {
+                controls: true,
+                autoplay: true,
+                preload: 'auto',
+                poster: '/assets/images/poster.png',
+                disablePictureInPicture: true,
+                noUTitleAttributes: true
+            });
+
+            var lastTimeMouseMoved = "";
+            $(document).mousemove(function(e) {
+                $('.btn-back').css({
+                    "opacity": "1",
+                    "transition": "all .3s"
+                })
+                $('.title-video').css({
+                    "opacity": "1",
+                    "transition": "all .3s"
+                })
+                $('.vjs-control-bar').css({
+                    "opacity": "1",
+                    "transition": "all .3s"
+                })
+                lastTimeMouseMoved = new Date().getTime();
+                setTimeout(function() {
+                    var currentTime = new Date().getTime();
+                    if (currentTime - lastTimeMouseMoved > 800) {
+                        $('.btn-back').css("opacity", "0")
+                        $('.title-video').css("opacity", "0")
+                        $('.vjs-control-bar').css("opacity", "0")
+                    }
+                }, 800)
+            });
         </script>
     @endif
 </body>

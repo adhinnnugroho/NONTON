@@ -27,7 +27,7 @@
                         <img src="{{ asset('/assets/icons/ic_play.svg') }}" width="50" alt="">
                     </div>
                 </div>
-                <a href="watching.html" class="inset-0 absolute z-50"></a>
+                <a href="{{ route('nonton.film') }}" class="inset-0 absolute z-50"></a>
             </div>
 
             <!-- Movie Thumbnail -->
