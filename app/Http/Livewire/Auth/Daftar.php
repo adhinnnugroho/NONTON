@@ -2,13 +2,15 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Models\User;
 use Livewire\Component;
-use App\Models\account\pengguna;
+use App\Models\Master\Account;
+use App\Models\Master\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Str;
+
 
 class Daftar extends Component
 {
@@ -33,22 +35,23 @@ class Daftar extends Component
 
     public function submit()
     {
-        $pengguna = pengguna::create([
-            'email' => $this->email,
-        ]);
+
+        $uuid = Str::uuid();
 
         $user = User::create([
-            'username'  => $this->username,
+            'uuid'     => $uuid,
             'email'     => $this->email,
-            'password'  => Hash::make($this->password),
-            'level'     => 'user',
-            'id_pengguna'   => $pengguna->id,
-            'join_date'   => date('Y-m-d H:i:s')
         ]);
 
-        event(new Registered($user));
-
-        Auth::login($user);
+        $account = Account::create([
+            'uuid'     => $uuid,
+            'email' => $this->email,
+            'username' => $this->username,
+            'password'  => Hash::make($this->password),
+            'level'     => 1,
+            'role'      => 'user',
+            'id_user' => $user->id
+        ]);
         return redirect(RouteServiceProvider::HOME);
     }
 }

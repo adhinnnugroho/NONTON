@@ -19,29 +19,23 @@
                 <p class="w-[370px]">
                 <div class="flex flex-col gap-6">
                     <div>
-                        <label class="text-base block mb-2">Username</label>
-                        <input type="text" name="fullname"
-                            class="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                            placeholder="Your username..." wire:model.defer="username" />
+                        <x-label.simple-label>Username</x-label.simple-label>
+                        <x-input.simpleinput type="text" name="username" wire:model.defer="username" placeholder="Your username..." aria-placeholder="Your username"/>
                         @error('username')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror
 
                     </div>
                     <div>
-                        <label class="text-base block mb-2">Email Address</label>
-                        <input type="email" name="email"
-                            class="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                            placeholder="Your Email Address" wire:model.defer="email" />
+                        <x-label.simple-label>Email Address</x-label.simple-label>
+                        <x-input.simpleinput type="email" wire:model.defer="email" placeholder="Your email..."/>
                         @error('email')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
-                        <label class="text-base block mb-2">Password</label>
-                        <input type="password" name="password"
-                            class="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                            placeholder="Your Password" wire:model.defer="password" />
+                        <x-label.simple-label>Password</x-label.simple-label>
+                        <x-input.simpleinput type="password" wire:model.defer="password" placeholder="Your password..."/>
                         @error('password')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror

@@ -25,12 +25,17 @@ Route::get('dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+
 Route::name('layanan')->prefix('layanan')->group(function () {
     Route::get('produk', [ProductController::class, 'index'])->name('.produk');
 });
 
 Route::name('nonton')->prefix('nonton')->group(function () {
     Route::get('film', [FilmController::class, 'index'])->name('.film');
+});
+
+Route::name('setting.')->prefix('setting')->group(function(){
+    Route::get('/', [FilmController::class, 'index'])->name('index');
 });
 
 

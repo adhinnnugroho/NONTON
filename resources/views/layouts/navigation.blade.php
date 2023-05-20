@@ -13,11 +13,10 @@
                 <img src="{{ asset('/assets/images/avatar.png') }}" class="rounded-full object-cover w-full"
                     alt="" />
             </a>
-            <div class="bg-gray-200 rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
+            <div class="bg-gray-50 rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
                 id="dropdown-target">
-                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Dashboard</a>
-                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Settings</a>
-                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Sign Out</a>
+                <a href="{{ route('setting.index') }}" class="transition-all hover:bg-sky-100 p-4">Settings</a>
+                <a href="#!" class="transition-all hover:bg-sky-100 p-4">Logout</a>
             </div>
         </div>
     </div>

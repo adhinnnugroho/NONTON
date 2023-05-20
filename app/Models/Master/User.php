@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models\account;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pengguna extends Model
+class User extends Model
 {
     use HasFactory;
-    protected $table = 'pengguna';
+    protected $table = 'm_users';
     public $timestamps = false;
-    public $guarded = ['id'];
+    protected $guarded = ['id'];
 }
