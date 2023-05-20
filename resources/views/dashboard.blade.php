@@ -1,7 +1,7 @@
 <x-app-layout>
     <!-- Featured -->
     <div>
-        <div class="font-semibold text-[22px] text-black mb-4">Featured Movies</div>
+        <div class="font-semibold text-[22px] text-black mb-4">Featured Movie</div>
         <div class="gap-[30px] __scroll-selector">
 
             <!-- Movie Thumbnail -->
