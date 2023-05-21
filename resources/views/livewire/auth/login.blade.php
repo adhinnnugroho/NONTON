@@ -19,19 +19,16 @@
                 <p class="w-[370px]">
                 <div class="flex flex-col gap-6">
                     <div>
-                        <label class="text-base block mb-2">Email Address</label>
-                        <input type="email" name="email"
-                            class="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                            placeholder="Email Address" wire:model.defer="email" />
+                        <x-label.simple-label>Email Address</x-label.simple-label>
+                        <x-input.simpleinput type="email" wire:model.defer="email" placeholder="Your email..." />
                         @error('email')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
-                        <label class="text-base block mb-2">Password</label>
-                        <input type="password" name="password"
-                            class="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                            placeholder="Password" wire:model.defer="password" />
+                        <x-label.simple-label>Password</x-label.simple-label>
+                        <x-input.simpleinput type="password" wire:model.defer="password"
+                            placeholder="Your password..." />
                         @error('password')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror
@@ -47,9 +44,14 @@
                             Processing...
                         </div>
                     </button>
-                    <a href="{{ url('/register') }}" class="rounded-2xl border border-white py-[13px] text-center">
+                    {{-- <a href="{{ url('/register') }}" class="rounded-2xl border border-white py-[13px] text-center">
                         <span class="text-base text-white">
                             Create New Account
+                        </span>
+                    </a> --}}
+                    <a href="{{ route('google.index') }}" class="rounded-2xl border border-white py-[13px] text-center">
+                        <span class="text-base text-white">
+                            <i class="fa-brands fa-google"></i> Login With Google
                         </span>
                     </a>
                 </div>

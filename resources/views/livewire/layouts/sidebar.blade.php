@@ -112,7 +112,7 @@
                         </svg>
                         Your Profile
                     </a>
-                    <a href="sign_in.html"
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         class="flex items-center font-normal text-black text-sm w-full mb-5 gap-3 transition-all mb-0">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
                             class="text-[#B7B7B7]" xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\Film\FilmController;
 use App\Http\Controllers\Layanan\Product\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -36,6 +37,11 @@ Route::name('nonton')->prefix('nonton')->group(function () {
 
 Route::name('setting.')->prefix('setting')->group(function(){
     Route::get('/', [FilmController::class, 'index'])->name('index');
+});
+
+Route::name('google.')->prefix('google')->group(function(){
+    Route::get('/', [GoogleController::class, 'redirectToGoogle'])->name('index');
+    Route::get('/callback', [GoogleController::class, 'Handlecallback'])->name('callback');
 });
 
 
