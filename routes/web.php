@@ -5,6 +5,7 @@ use App\Http\Controllers\Film\FilmController;
 use App\Http\Controllers\Layanan\Product\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users AS userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,8 @@ Route::name('nonton')->prefix('nonton')->group(function () {
     Route::get('film', [FilmController::class, 'index'])->name('.film');
 });
 
-Route::name('setting.')->prefix('setting')->group(function(){
-    Route::get('/', [FilmController::class, 'index'])->name('index');
+Route::name('profile.')->prefix('setting')->group(function(){
+    Route::get('/', [userController\ProfileController::class, 'index'])->name('index');
 });
 
 Route::name('google.')->prefix('google')->group(function(){

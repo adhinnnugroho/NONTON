@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('gender', ['L', 'P'])->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->text('deskripsi')->nullable();
+            $table->text('foto')->nullable();
             $table->timestamps();
         });
     }

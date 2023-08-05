@@ -28,6 +28,7 @@ class GoogleController extends Controller
         }else{
             $uuid = Str::uuid();
             $email = $user->getEmail();
+            $avatar = $user->getAvatar();
             $username = $this->generateUniqueUsername($email);
             $password = Hash::make($email);
             $google_id = $user->getId();
@@ -35,6 +36,7 @@ class GoogleController extends Controller
             $usermaster = User::create([
                 'uuid'     => $uuid,
                 'email'     => $email,
+                'foto'      => $avatar
             ]);
 
             $accountNew = Account::create([
@@ -44,8 +46,8 @@ class GoogleController extends Controller
                 'username' => $username,
                 'password'  => $password,
                 'level'     => 1,
-                'role'      => 'user',
-                'id_user' => $usermaster->id
+                'id_user' => $usermaster->id,
+                'foto'      => $avatar
             ]);
 
             $account = ModelsUser::where(['id' => $accountNew->id])->first();
