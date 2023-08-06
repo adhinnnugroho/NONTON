@@ -47,7 +47,7 @@
     @if (Route::is('dashboard'))
         <script>
             $(document).on('turbolinks:load', function() {
-                $('.__scroll-selector').removeClass('hidden').flickity({
+                $('.__scroll-selector').flickity({
                     "cellAlign": "left",
                     "contain": true,
                     "groupCells": 1,
