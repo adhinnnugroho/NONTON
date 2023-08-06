@@ -20,14 +20,14 @@
                 <div class="flex flex-col gap-6">
                     <div>
                         <x-label.simple-label>Email Address</x-label.simple-label>
-                        <x-input.simpleinput type="email" wire:model.defer="email" placeholder="Your email..." />
+                        <x-input.simple-input type="email" wire:model.defer="email" placeholder="Your email..." />
                         @error('email')
                             <span class="error text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
                         <x-label.simple-label>Password</x-label.simple-label>
-                        <x-input.simpleinput type="password" wire:model.defer="password"
+                        <x-input.simple-input type="password" wire:model.defer="password"
                             placeholder="Your password..." />
                         @error('password')
                             <span class="error text-red-500">{{ $message }}</span>

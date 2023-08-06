@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class simpleinput extends Component
+class SimpleInput extends Component
 {
     public $type;
     public $wireModel;
@@ -24,6 +24,6 @@ class simpleinput extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.input.simpleinput');
+        return view('components.input.simple-input');
     }
 }

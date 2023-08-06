@@ -23,7 +23,7 @@ class GoogleController extends Controller
         $user = Socialite::driver('google')->user();
         $findUser = ModelsUser::where(['google_id' => $user->getId()])->first();
         if($findUser){
-            Auth::login($findUser);
+            Auth::login($findUser, true);
             return redirect()->intended('dashboard');
         }else{
             $uuid = Str::uuid();
@@ -51,7 +51,7 @@ class GoogleController extends Controller
             ]);
 
             $account = ModelsUser::where(['id' => $accountNew->id])->first();
-            Auth::login($account);
+            Auth::login($account, true);
             return redirect()->intended('dashboard');
         }
     }
