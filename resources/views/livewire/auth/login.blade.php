@@ -6,7 +6,13 @@
         </div>
         <div class="py-24 flex laptopLg:ml-[680px] laptopXl:ml-[870px]">
             <div>
-                <img src="{{ asset('/assets/images/moonton-white.svg') }}" alt="">
+                {{-- <img src="{{ asset('/assets/images/moonton-white.svg') }}" alt=""> --}}
+                <div class="flex flex-wrap">
+                    <img src="{{ asset('/assets/images/logo.png') }}" alt="" class="w-16 mr-4">
+                    <h5 class="text-white text-3xl">
+                        Cahnom <br> Products
+                    </h5>
+                </div>
                 <div class="my-[70px]">
                     <div class="font-semibold text-[26px] mb-3">
                         Welcome Back
