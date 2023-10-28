@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('username');
             $table->text('email');
             $table->text('password');
-            $table->enum('role', ['user', 'admin', 'super_admin']);
             $table->integer('level')->commend('1 = user, 2 = admin');
             $table->integer('id_user');
             $table->timestamps();
