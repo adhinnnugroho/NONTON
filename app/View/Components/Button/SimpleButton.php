@@ -1,21 +1,21 @@
 <?php
 
-namespace App\View\Components\input;
+namespace App\View\Components\Button;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SimpleInput extends Component
+class SimpleButton extends Component
 {
-    public $wireModel, $error;
+
+    public $color;
     /**
      * Create a new component instance.
      */
-    public function __construct($wireModel = null, $error = null)
+    public function __construct($color = "alerange")
     {
-        $this->wireModel = $wireModel;
-        $this->error = $error;
+        $this->color = $color;
     }
 
     /**
@@ -23,6 +23,6 @@ class SimpleInput extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.input.simple-input');
+        return view('components.button.simple-button');
     }
 }
