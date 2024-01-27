@@ -5,7 +5,7 @@ use App\Http\Controllers\Film\FilmController;
 use App\Http\Controllers\Layanan\Product\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Users AS userController;
+use App\Http\Controllers\Users as userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +36,11 @@ Route::name('nonton')->prefix('nonton')->group(function () {
     Route::get('film', [FilmController::class, 'index'])->name('.film');
 });
 
-Route::name('profile.')->prefix('setting')->group(function(){
+Route::name('profile.')->prefix('setting')->group(function () {
     Route::get('/', [userController\ProfileController::class, 'index'])->name('index');
 });
 
-Route::name('google.')->prefix('google')->group(function(){
+Route::name('google.')->prefix('google')->group(function () {
     Route::get('/', [GoogleController::class, 'redirectToGoogle'])->name('index');
     Route::get('/callback', [GoogleController::class, 'Handlecallback'])->name('callback');
 });

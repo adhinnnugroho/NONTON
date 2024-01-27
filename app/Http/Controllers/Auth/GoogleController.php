@@ -15,26 +15,31 @@ use Illuminate\Support\Str;
 
 class GoogleController extends Controller
 {
-    public function redirectToGoogle(){
+    public function redirectToGoogle()
+    {
         return Socialite::driver('google')->redirect();
     }
 
-    public function Handlecallback(){
+    public function Handlecallback()
+    {
         $user = Socialite::driver('google')->user();
         $findUser = ModelsUser::where(['google_id' => $user->getId()])->first();
-        if($findUser){
+        if ($findUser) {
             Auth::login($findUser, true);
             return redirect()->intended('dashboard');
-        }else{
+        } else {
             $uuid = Str::uuid();
             $email = $user->getEmail();
             $avatar = $user->getAvatar();
             $username = $this->generateUniqueUsername($email);
             $password = Hash::make($email);
             $google_id = $user->getId();
+            $name = $user->getName();
+
 
             $usermaster = User::create([
                 'uuid'     => $uuid,
+                'name'      => $name,
                 'email'     => $email,
                 'foto'      => $avatar
             ]);
