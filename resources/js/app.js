@@ -5,8 +5,9 @@ import Turbolinks from 'turbolinks';
 
 
 window.Alpine = Alpine;
+window.Turbolinks = Turbolinks;
 
+Turbolinks.start();
 Alpine.start();
 
 
-Turbolinks.start()
