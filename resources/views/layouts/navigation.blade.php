@@ -11,17 +11,18 @@
             <a class="outline outline-2 outline-gray-2 p-[5px] rounded-full w-[60px] dropdown-button cursor-pointer"
                 data-target="#dropdown-button">
                 @if (stripos(Auth::user()->foto, 'https://lh3.googleusercontent.com') !== false)
-                    <img src="{{ Auth::user()->foto }}" class="rounded-full object-cover w-full"
-                    alt="" />
+                    <img src="{{ Auth::user()->foto }}" class="rounded-full object-cover w-full" alt="" />
                 @else
                     <img src="{{ asset('/assets/images/avatar.png') }}" class="rounded-full object-cover w-full"
-                    alt="" />
+                        alt="" />
                 @endif
             </a>
-            <div class="bg-gray-50 rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px] min-w-[180px] hidden overflow-hidden"
+            <div class="bg-gray-50 rounded-2xl text-black font-medium flex flex-col gap-1 absolute z-[999] right-0 top-[80px]
+                min-w-[180px] hidden overflow-hidden"
                 id="dropdown-target">
-                <a href="{{ route('profile.index') }}" class="transition-all hover:bg-sky-100 p-4">Profile</a>
-                <a href="{{ route('logout') }}" class="transition-all hover:bg-sky-100 p-4" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <a href="{{ route('profile-setting.index') }}" class="transition-all hover:bg-sky-100 p-4">Profile</a>
+                <a href="{{ route('logout') }}" class="transition-all hover:bg-sky-100 p-4"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>

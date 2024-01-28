@@ -36,8 +36,9 @@ Route::name('nonton')->prefix('nonton')->group(function () {
     Route::get('film', [FilmController::class, 'index'])->name('.film');
 });
 
-Route::name('profile.')->prefix('setting')->group(function () {
+Route::name('profile-setting.')->prefix('profile-setting')->group(function () {
     Route::get('/', [userController\ProfileController::class, 'index'])->name('index');
+    Route::get('/edit', [userController\ProfileController::class, 'edit'])->name('edit');
 });
 
 Route::name('google.')->prefix('google')->group(function () {
