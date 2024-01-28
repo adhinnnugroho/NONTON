@@ -147,17 +147,45 @@
                 <div class="block">
                     <x-label.simple-label>Jenis kelamin</x-label.simple-label>
                     <div class="grid grid-cols-2 gap-5">
-                        <div class="">
-                            <i class="fa-solid fa-mars"></i>
-                        </div>
-                        <div class="">
-                            <i class="fa-solid fa-venus"></i>
-                        </div>
+                        <label class="cursor-pointer">
+                            <input type="radio" class="peer sr-only" name="pricing" />
+                            <div
+                                class="w-44 max-w-xl rounded-md bg-gray-200 p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <i class="fa fa-mars"></i>
+                                    </div>
+                                    <div class="flex items-end justify-between">
+                                        <p>
+                                            Laki-laki
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" class="peer sr-only" name="pricing" />
+                            <div
+                                class="w-44 max-w-xl rounded-md bg-gray-200 p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                <div class="flex flex-col gap-1">
+                                    <div class="flex items-center justify-between">
+                                        <i class="fa fa-venus"></i>
+                                    </div>
+                                    <div class="flex items-end justify-between">
+                                        <p>
+                                            Perempuan
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
                     </div>
                 </div>
                 <div class="block">
-                    <x-label.simple-label>Tanggal Lahir</x-label.simple-label>
-                    <x-input.rounded-input type="date" />
+                    <div class="mt-10">
+                        <x-label.simple-label>Tanggal Lahir</x-label.simple-label>
+                        <x-input.rounded-input type="date" />
+                    </div>
                 </div>
             </div>
 
