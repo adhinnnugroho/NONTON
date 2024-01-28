@@ -21,7 +21,7 @@ class ProfileController extends Controller
             'userLogin' => Auth::user(),
             'breadcrumbs' => [
                 'Home' => route("dashboard"),
-                'Profile Setting' => route("profile-setting.index"),
+                'My Profile' => route("profile-setting.index"),
                 'Edit Profile' => null,
             ]
         ];
