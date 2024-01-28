@@ -30,6 +30,12 @@
         <div class="ml-[300px] px-[50px]">
             <div class="py-10 flex flex-col gap-[50px]">
                 @include('layouts.navigation')
+
+                @isset($breadcrumbs)
+                    @livewire('breadcrumbs.simple-breadcrumbs', [
+                        'data' => $breadcrumbs,
+                    ])
+                @endisset
                 <main>
                     {{ $slot }}
                 </main>

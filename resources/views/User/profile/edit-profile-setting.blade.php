@@ -1,9 +1,5 @@
 <x-app-layout :breadcrumbs="$breadcrumbs">
 
-    @livewire('breadcrumbs.simple-breadcrumbs', [
-        'data' => $breadcrumbs,
-    ])
-
     <div class="lg:grid grid-cols-4 gap-4 hidden mt-5">
         <div class="border border-gray-400 rounded-lg col-span-1">
             <div class="relative mt-16" x-data="{ isOpen: false }">
