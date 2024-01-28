@@ -6,7 +6,7 @@
 
     <div class="lg:grid grid-cols-4 gap-4 hidden mt-5">
         <div class="border border-gray-400 rounded-lg col-span-1">
-            <div class="relative mt-5 mb-5" x-data="{ isOpen: false }">
+            <div class="relative mt-16" x-data="{ isOpen: false }">
                 <div class="relative w-44 h-44 mx-auto rounded-full overflow-hidden cursor-pointer group"
                     x-on:click="isOpen = !isOpen">
                     @if (stripos($userLogin->foto, 'https://lh3.googleusercontent.com') !== false)
@@ -35,8 +35,36 @@
                 </ul>
             </div>
         </div>
-        <div class="border border-gray-400 col-span-3">
+        <div class="border border-gray-400 col-span-3 p-5 rounded-lg">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="block">
+                    <x-label.simple-label>Nama lengkap</x-label.simple-label>
+                    <x-input.rounded-input />
+                </div>
+                <div class="block">
+                    <x-label.simple-label>Nama Pengguna</x-label.simple-label>
+                    <x-input.rounded-input />
+                </div>
+                <div class="block">
+                    <x-label.simple-label>Jenis kelamin</x-label.simple-label>
+                    <x-input.rounded-input />
+                </div>
+                <div class="block">
+                    <x-label.simple-label>Tanggal Lahir</x-label.simple-label>
+                    <x-input.rounded-input type="date" />
+                </div>
+            </div>
 
+            <div class="block mt-5">
+                <x-label.simple-label>Deskripsi</x-label.simple-label>
+                <textarea name="" id="" class="w-full"></textarea>
+            </div>
+            <div class="float-right">
+                <x-button.rounded-button class="w-44 mt-5">
+                    Simpan
+                </x-button.rounded-button>
+            </div>
         </div>
+
     </div>
 </x-app-layout>
